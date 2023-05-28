@@ -1,5 +1,3 @@
-package Semenar_OOP1;
-
 /**
  * Main
  */

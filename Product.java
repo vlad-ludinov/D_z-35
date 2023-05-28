@@ -1,5 +1,3 @@
-package Semenar_OOP1;
-
 public abstract class Product {
     
     private String kind;
