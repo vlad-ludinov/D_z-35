@@ -4,4 +4,8 @@ public class Orange extends Product{
         super(name, price, id);
     }
     
+    @Override
+    public String toString() {
+        return String.format("Апельсин: %s - цена: %s", super.getKind(), super.getPrice());
+    }
 }
