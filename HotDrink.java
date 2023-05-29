@@ -1,15 +1,24 @@
 public class HotDrink extends Product{
 
-    private Integer volume;
+    private Double volume;
     private Integer temperature;
+    private Integer sugar = null;
 
-    public HotDrink(String kind, double price, Long id, Integer volume, Integer temperature) {
+    public HotDrink(String kind, double price, Long id, Double volume, Integer temperature) {
         super(kind, price, id);
         this.volume = volume;
         this.temperature = temperature;
     }
 
-    public void setVolume(Integer volume) {
+    public HotDrink(String kind, double price, Long id, Double volume, Integer temperature, Integer sugar) {
+        super(kind, price, id);
+        this.volume = volume;
+        this.temperature = temperature;
+        this.sugar = sugar;
+    }
+
+
+    public void setVolume(Double volume) {
         this.volume = volume;
     }
 
@@ -17,7 +26,11 @@ public class HotDrink extends Product{
         this.temperature = temperature;
     }
 
-    public Integer getVolume() {
+    public void setSugar(Integer sugar) {
+        this.sugar = sugar;
+    }
+
+    public Double getVolume() {
         return volume;
     }
 
@@ -25,7 +38,15 @@ public class HotDrink extends Product{
         return temperature;
     }
 
+    public Integer getSugar() {
+        return sugar;
+    }
+
     public String toString() {
-        return String.format("Горячий напиток: %s (%sл., %s° C) - цена: %s", super.getKind(), this.volume, this.temperature, super.getPrice());
+        if (sugar == null) {
+            return String.format("Горячий напиток: %s (%s л., %s° C) - цена: %s", super.getKind(), this.volume, this.temperature, super.getPrice());
+        } else {
+            return String.format("Горячий напиток: %s (%s л., %s° C, %s куб. схp.) - цена: %s", super.getKind(), this.volume, this.temperature, this.sugar ,super.getPrice());
+        }
     }
 }
